@@ -13,9 +13,9 @@ for app in (brew cask list)
 
     echo $app\: $current '->' $latest
     if test -z '$cask_app_with_update'
-        set -l cask_app_with_update $app
+        set cask_app_with_update $app
     else
-        set -l cask_app_with_update $cask_app_with_update $app
+        set cask_app_with_update $cask_app_with_update $app
     end
 end
 
