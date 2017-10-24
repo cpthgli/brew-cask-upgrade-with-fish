@@ -1,11 +1,10 @@
-#!/usr/local/bin/fish
+#!/usr/bin/env fish
 
 for app in (brew cask list)
     set -l latest (brew cask info $app | awk -F: 'NR==1{print substr($2, 2)}')
     set -l current (ls -1 /usr/local/Caskroom/$app | awk -F/ 'END{print $1}')
 
     if test $latest = latest
-        echo Warning: Can not get the latest version. Because, Cask \'$app\' version is \'latest\'.
         continue
     else if test $current = $latest
         continue
