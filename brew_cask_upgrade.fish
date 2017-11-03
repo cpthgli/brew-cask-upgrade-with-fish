@@ -23,5 +23,6 @@ if test -n '$cask_app_with_update'
     for app in $cask_app_with_update
         brew cask install $app --force
     end
+    brew cask cleanup
     echo 'Completed.'
 end
