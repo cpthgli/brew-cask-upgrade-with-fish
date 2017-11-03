@@ -21,8 +21,8 @@ end
 if test -n '$cask_app_with_update'
     echo $cask_app_with_update
     for app in $cask_app_with_update
-        brew cask uninstall $app --force
-        brew cask install $app
-     end
+        brew cask install $app --force
+    end
+    brew cask cleanup
     echo 'Completed.'
 end
